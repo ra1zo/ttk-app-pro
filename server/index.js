@@ -51,6 +51,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
+
 app.post('/extract-text', upload.single('pdfFile'), (req, res) => {
     const pdfPath = req.file.path;
     const platform = req.body.platform.toLowerCase();
@@ -105,9 +106,12 @@ app.post('/extract-text', upload.single('pdfFile'), (req, res) => {
     });
 });
 
-
+app.get('/',(req,res)=>{
+    console.log("Hello world");
+})
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
 
