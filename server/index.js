@@ -108,6 +108,7 @@ app.post('/extract-text', upload.single('pdfFile'), (req, res) => {
 
 app.get('/',(req,res)=>{
     console.log("Hello world");
+    res.send('Working !!')
 })
 
 app.listen(port, () => {

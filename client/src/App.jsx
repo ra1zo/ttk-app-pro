@@ -56,7 +56,7 @@ function App() {
   formData.append('fileName', fileName);
 
     try {
-      const response = await axios.post('http://localhost:3001/extract-text', formData, {
+      const response = await axios.post('https://ttk-app-backend.onrender.com/extract-text', formData, {
         responseType: 'blob', // Important for downloading files
       });
       if (response.status === 200) {
